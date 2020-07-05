@@ -4,11 +4,11 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
-  SafeAreaView,
   Image,
   View,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 const cards = [
   {
@@ -58,12 +58,21 @@ const cards = [
 ];
 
 const BookList = () => {
+  const navigation = useNavigation();
+  function handleNavigateToDetail(pointId: number) {
+    navigation.navigate('Details', { pointId });
+  }
+
   return (
     <>
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
           {cards.map(book => (
-            <TouchableOpacity key={String(book?.id)} style={styles.item}>
+            <TouchableOpacity
+              key={String(book?.id)}
+              style={styles.item}
+              onPress={() => handleNavigateToDetail(Number(book.id))}
+            >
               <View style={styles.grid}>
                 <Image
                   style={styles.thumbnail}
@@ -92,13 +101,14 @@ const BookList = () => {
             </TouchableOpacity>
           ))}
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
   },
   item: {
     backgroundColor: '#fff',
