@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView } from 'react-native';
-
+import { StyleSheet, SafeAreaView } from 'react-native';
+import BookList from './pages/BookList';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Árvore</Text>
+      <BookList />
     </SafeAreaView>
   );
 }
@@ -14,5 +14,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  progressBar: {
+    height: 20,
+    borderRadius: 14,
   },
 });
