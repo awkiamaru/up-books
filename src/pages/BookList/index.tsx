@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const cards = [
   {

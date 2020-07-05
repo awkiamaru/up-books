@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, SafeAreaView, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
+import BookList from '../../pages/BookList';
 
 Icon.loadFont();
 function HomeScreen() {
@@ -23,6 +24,13 @@ function SettingsScreen() {
         <Icon name="grid" size={20} color="#000" />
       </Text>
     </View>
+  );
+}
+function IndicatedScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <BookList />
+    </SafeAreaView>
   );
 }
 const Tab = createBottomTabNavigator();
@@ -51,7 +59,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Indicados"
-        component={HomeScreen}
+        component={IndicatedScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Icon name="book" size={20} color={color} />
