@@ -90,13 +90,13 @@ const BookList = () => {
               </View>
               <View style={styles.grid}>
                 <Progress.Bar
-                  progress={0.5}
+                  progress={0.9}
                   width={250}
                   height={20}
                   style={styles.progressBar}
                   color={'#58A700'}
                 />
-                <Text style={styles.progressBarText}>50%</Text>
+                <Text style={styles.progressBarText}>90%</Text>
               </View>
             </TouchableOpacity>
           ))}
