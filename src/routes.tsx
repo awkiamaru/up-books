@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import BookList from './pages/BookList';
 import BookDetails from './pages/Details';
 import BottomTabNavigator from './components/BottomTabNavigator';
 

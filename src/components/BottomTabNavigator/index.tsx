@@ -38,6 +38,7 @@ const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{ style: styles.text, activeTintColor: '#4B4453' }}
+      initialRouteName="Indicados"
     >
       <Tab.Screen
         name="Início"
